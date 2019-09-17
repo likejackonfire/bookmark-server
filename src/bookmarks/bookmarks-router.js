@@ -33,8 +33,6 @@ bookmarkRouter
             .json(bookmark)
     })
 
-    
-
 bookmarkRouter
     .route('/bookmarks/:id')
     .get((req, res) => {
