@@ -1,6 +1,6 @@
 const knex = require('knex');
 const app = require('../src/app');
-const { makeBookmarksArray} = require('./bookmarks.fixtures')
+const {makeBookmarksArray} = require('./bookmarks.fixtures')
 
 describe('Bookmarks Endpoints', () => {
     let db;
@@ -14,14 +14,14 @@ describe('Bookmarks Endpoints', () => {
     });
 });
 
-    after('disconnect from db', () => db.destroy());
+  after('disconnect from db', () => db.destroy());
 
   before('clean the table', () => db('bookmarks').truncate());
 
   afterEach('cleanup', () => db('bookmarks').truncate());
 
-  describe('GET /api/bookmarks', () => {
-    context('Given there are no bookmarks in the database', () => {
+describe('GET /api/bookmarks', () => {
+    context('Given there are no bookmarks', () => {
       it('GET /api/bookmarks responds with 200 and an empty list', () => {
         return supertest(app)
           .get('/api/bookmarks')
