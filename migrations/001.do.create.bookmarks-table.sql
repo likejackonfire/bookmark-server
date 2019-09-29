@@ -4,3 +4,4 @@ CREATE TABLE bookmarks (
     url TEXT NOT NULL,
     description TEXT,
     rating INTEGER CHECK (rating > 0 AND rating < 6) NOT NULL
+);
